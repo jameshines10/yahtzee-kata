@@ -79,7 +79,10 @@ class ScoreKeeper {
                 break;
             case THREE_OF_KIND:
                 this.score = getThreeOfKindScore(pipCounts);
-                break;      
+                break;
+            case FOUR_OF_KIND:
+                this.score = 4;
+                break;
         }
 
         return this.score;
