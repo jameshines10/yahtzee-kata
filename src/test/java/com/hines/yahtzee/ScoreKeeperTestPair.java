@@ -6,13 +6,25 @@ import static org.hamcrest.CoreMatchers.*;
 import org.mockito.Mockito;
 import static org.mockito.Mockito.when;
 
-public class ScoreKeeperTestOnes {
+public class ScoreKeeperTestPair {
     ScoreKeeper scoreKeeper;
     Die dieOne;
     Die dieTwo;
     Die dieThree;
     Die dieFour;
     Die dieFive;
+
+    @Before
+    public void before() {
+        // Arrange
+        scoreKeeper = new ScoreKeeper();
+
+        dieOne = Mockito.mock(Die.class);       
+        dieTwo = Mockito.mock(Die.class);       
+        dieThree = Mockito.mock(Die.class);       
+        dieFour = Mockito.mock(Die.class);       
+        dieFive = Mockito.mock(Die.class);
+    }
 
     @Test    
     public void calculateScorePairsCategoryOne() {
