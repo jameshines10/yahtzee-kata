@@ -27,7 +27,7 @@ public class ScoreKeeperTestOnes {
     }
 
     @Test    
-    public void calculateScoreOnesCategoryOne() {                       
+    public void calculateScoreOnesCategory1() {                       
         // Act
         when(dieOne.roll()).thenReturn(3);
         when(dieTwo.roll()).thenReturn(1);
@@ -44,7 +44,7 @@ public class ScoreKeeperTestOnes {
     }
 
     @Test    
-    public void calculateScoreOnesCategoryTwo() {
+    public void calculateScoreOnesCategory2() {
         // Act
         when(dieOne.roll()).thenReturn(3);
         when(dieTwo.roll()).thenReturn(1);
@@ -61,7 +61,7 @@ public class ScoreKeeperTestOnes {
     }
 
     @Test    
-    public void calculateScoreOnesCategoryThree() {
+    public void calculateScoreOnesCategory3() {
         // Act
         when(dieOne.roll()).thenReturn(3);
         when(dieTwo.roll()).thenReturn(1);

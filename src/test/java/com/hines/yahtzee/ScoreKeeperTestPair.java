@@ -27,7 +27,7 @@ public class ScoreKeeperTestPair {
     }
 
     @Test    
-    public void calculateScorePairsCategoryOne() {
+    public void calculateScorePairCategory1() {
         // Act
         when(dieOne.roll()).thenReturn(3);
         when(dieTwo.roll()).thenReturn(3);
@@ -41,5 +41,56 @@ public class ScoreKeeperTestPair {
 
         //Assert
         assertThat(score, equalTo(8));        
+    }
+
+    @Test    
+    public void calculateScorePairCategory2() {
+        // Act
+        when(dieOne.roll()).thenReturn(1);
+        when(dieTwo.roll()).thenReturn(2);
+        when(dieThree.roll()).thenReturn(3);
+        when(dieFour.roll()).thenReturn(6);
+        when(dieFive.roll()).thenReturn(4);        
+
+        int[] pipCounts = {dieOne.roll(), dieTwo.roll(), dieThree.roll(), dieFour.roll(), dieFive.roll()};
+        
+        int score = scoreKeeper.calculateScore(pipCounts, Category.PAIR);
+
+        //Assert
+        assertThat(score, equalTo(0));        
+    }
+
+    @Test    
+    public void calculateScorePairCategory3() {
+        // Act
+        when(dieOne.roll()).thenReturn(2);
+        when(dieTwo.roll()).thenReturn(2);
+        when(dieThree.roll()).thenReturn(2);
+        when(dieFour.roll()).thenReturn(6);
+        when(dieFive.roll()).thenReturn(2);        
+
+        int[] pipCounts = {dieOne.roll(), dieTwo.roll(), dieThree.roll(), dieFour.roll(), dieFive.roll()};
+        
+        int score = scoreKeeper.calculateScore(pipCounts, Category.PAIR);
+
+        //Assert
+        assertThat(score, equalTo(4));        
+    }
+
+    @Test    
+    public void calculateScorePairCategory4() {
+        // Act
+        when(dieOne.roll()).thenReturn(6);
+        when(dieTwo.roll()).thenReturn(2);
+        when(dieThree.roll()).thenReturn(6);
+        when(dieFour.roll()).thenReturn(6);
+        when(dieFive.roll()).thenReturn(5);        
+
+        int[] pipCounts = {dieOne.roll(), dieTwo.roll(), dieThree.roll(), dieFour.roll(), dieFive.roll()};
+        
+        int score = scoreKeeper.calculateScore(pipCounts, Category.PAIR);
+
+        //Assert
+        assertThat(score, equalTo(12));        
     }
 }
