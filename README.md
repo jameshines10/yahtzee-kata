@@ -1,0 +1,1 @@
+This is my (incomplete) solution to the Yahtzee Kata. The project uses Gradle as its build tool, but I've included the gradle wrapper so that it is not necessary to have gradle installed on your system to test. Simply run ./gradlew test (the project may need to download some dependencies) from the project root directory and the tests should run.
