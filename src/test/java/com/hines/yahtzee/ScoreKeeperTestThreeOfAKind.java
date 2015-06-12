@@ -59,4 +59,72 @@ public class ScoreKeeperTestThreeOfAKind {
         //Assert
         assertThat(score, equalTo(18));        
     }
+
+    @Test    
+    public void calculateScoreThreeOfKindCategory3() {
+        // Act
+        when(dieOne.roll()).thenReturn(6);
+        when(dieTwo.roll()).thenReturn(3);
+        when(dieThree.roll()).thenReturn(6);
+        when(dieFour.roll()).thenReturn(4);
+        when(dieFive.roll()).thenReturn(3);        
+
+        int[] pipCounts = {dieOne.roll(), dieTwo.roll(), dieThree.roll(), dieFour.roll(), dieFive.roll()};
+        
+        int score = scoreKeeper.calculateScore(pipCounts, Category.THREE_OF_KIND);
+
+        //Assert
+        assertThat(score, equalTo(0));        
+    }
+
+    @Test
+    public void calculateScoreThreeOfKindCategory4() {
+        // Act
+        when(dieOne.roll()).thenReturn(3);
+        when(dieTwo.roll()).thenReturn(6);
+        when(dieThree.roll()).thenReturn(6);
+        when(dieFour.roll()).thenReturn(6);
+        when(dieFive.roll()).thenReturn(3);
+
+        int[] pipCounts = {dieOne.roll(), dieTwo.roll(), dieThree.roll(), dieFour.roll(), dieFive.roll()};
+
+        int score = scoreKeeper.calculateScore(pipCounts, Category.THREE_OF_KIND);
+
+        //Assert
+        assertThat(score, equalTo(18));
+    }
+
+    @Test
+    public void calculateScoreThreeOfKindCategory5() {
+        // Act
+        when(dieOne.roll()).thenReturn(3);
+        when(dieTwo.roll()).thenReturn(3);
+        when(dieThree.roll()).thenReturn(6);
+        when(dieFour.roll()).thenReturn(6);
+        when(dieFive.roll()).thenReturn(6);
+
+        int[] pipCounts = {dieOne.roll(), dieTwo.roll(), dieThree.roll(), dieFour.roll(), dieFive.roll()};
+
+        int score = scoreKeeper.calculateScore(pipCounts, Category.THREE_OF_KIND);
+
+        //Assert
+        assertThat(score, equalTo(18));
+    }
+
+    @Test
+    public void calculateScoreThreeOfKindCategory6() {
+        // Act
+        when(dieOne.roll()).thenReturn(6);
+        when(dieTwo.roll()).thenReturn(3);
+        when(dieThree.roll()).thenReturn(6);
+        when(dieFour.roll()).thenReturn(6);
+        when(dieFive.roll()).thenReturn(6);
+
+        int[] pipCounts = {dieOne.roll(), dieTwo.roll(), dieThree.roll(), dieFour.roll(), dieFive.roll()};
+
+        int score = scoreKeeper.calculateScore(pipCounts, Category.THREE_OF_KIND);
+
+        //Assert
+        assertThat(score, equalTo(18));
+    }
 }

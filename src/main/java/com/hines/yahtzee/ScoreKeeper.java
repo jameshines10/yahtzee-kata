@@ -47,7 +47,7 @@ class ScoreKeeper {
         outerloop:
         for(int i = 0; i < pipCounts.length; i++){
             for (int j = 0; j < pipCounts.length; j++) {
-                if(i != j && pipCounts[j] == pipCounts[i]) {
+                if(i != j && (pipCounts[j] == pipCounts[i])) {
                     tripletNum = pipCounts[j];
 
                     triplets.add(pipCounts[j]);
@@ -70,8 +70,6 @@ class ScoreKeeper {
     }
 
     public int calculateScore(int[] pipCounts, Category category) {
-        int score = 0;
-
         switch(category){
             case ONES: 
                 this.score = getOnesScore(pipCounts);                   
