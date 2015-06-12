@@ -20,7 +20,7 @@ class ScoreKeeper {
         int maxPairNum = 0;
 
         for(int i = 0; i < pipCounts.length; i++){
-            for (int j = 0; j < pipCounts.length; i++) {
+            for (int j = 0; j < pipCounts.length; j++) {
                 if(i != j){
                     if(pipCounts[j] == pipCounts[i] && pipCounts[j] != pairNum) {
                         pairNum = pipCounts[j];
