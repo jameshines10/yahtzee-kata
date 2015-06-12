@@ -7,5 +7,7 @@ public enum Category {
     FOURS,
     FIVES,
     PAIR,
-    THREE_OF_KIND
+    THREE_OF_KIND,
+    FOUR_OF_KIND,
+    SMALL_STRAIGHT
 }

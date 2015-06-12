@@ -41,23 +41,23 @@ class ScoreKeeper {
     private int getThreeOfKindScore(int[] pipCounts) {
         int tripletNum = 0;
         boolean gotTriplets = false;
-
-        List<Integer> triplets = new ArrayList<Integer>();
+        int timesInArray = 1;
 
         outerloop:
         for(int i = 0; i < pipCounts.length; i++){
             for (int j = 0; j < pipCounts.length; j++) {
                 if(i != j && (pipCounts[j] == pipCounts[i])) {
+                    timesInArray++;
                     tripletNum = pipCounts[j];
 
-                    triplets.add(pipCounts[j]);
-
-                    if(triplets.size() == 3){
+                    if(timesInArray == 3){
                         gotTriplets = true;
                         break outerloop;
                     }
                 }
             }
+
+            timesInArray = 1;
         }
 
         if(gotTriplets){
