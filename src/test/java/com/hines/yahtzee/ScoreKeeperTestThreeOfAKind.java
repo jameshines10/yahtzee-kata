@@ -42,4 +42,21 @@ public class ScoreKeeperTestThreeOfAKind {
         //Assert
         assertThat(score, equalTo(9));        
     }
+
+    @Test    
+    public void calculateScoreThreeOfKindCategory2() {
+        // Act
+        when(dieOne.roll()).thenReturn(6);
+        when(dieTwo.roll()).thenReturn(3);
+        when(dieThree.roll()).thenReturn(6);
+        when(dieFour.roll()).thenReturn(4);
+        when(dieFive.roll()).thenReturn(6);        
+
+        int[] pipCounts = {dieOne.roll(), dieTwo.roll(), dieThree.roll(), dieFour.roll(), dieFive.roll()};
+        
+        int score = scoreKeeper.calculateScore(pipCounts, Category.THREE_OF_KIND);
+
+        //Assert
+        assertThat(score, equalTo(18));        
+    }
 }
