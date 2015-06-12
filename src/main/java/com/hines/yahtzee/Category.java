@@ -6,5 +6,6 @@ public enum Category {
     THREES,
     FOURS,
     FIVES,
-    PAIR
+    PAIR,
+    THREE_OF_KIND
 }
