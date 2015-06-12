@@ -1,7 +1,5 @@
 package com.hines.yahtzee;
 
-import java.util.*;
-
 class ScoreKeeper {
     private int score;
 
