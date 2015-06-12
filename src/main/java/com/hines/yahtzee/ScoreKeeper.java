@@ -69,6 +69,37 @@ class ScoreKeeper {
         return tripletNum;
     }
 
+    private int getFourOfKindScore(int[] pipCounts) {
+        int quadNum = 0;
+        boolean gotQuads = false;
+        int timesInArray = 1;
+
+        outerloop:
+        for(int i = 0; i < pipCounts.length; i++){
+            for (int j = 0; j < pipCounts.length; j++) {
+                if(i != j && (pipCounts[j] == pipCounts[i])) {
+                    timesInArray++;
+                    quadNum = pipCounts[j];
+
+                    if(timesInArray == 4){
+                        gotQuads = true;
+                        break outerloop;
+                    }
+                }
+            }
+
+            timesInArray = 1;
+        }
+
+        if(gotQuads){
+            quadNum *= 4;
+        }else{
+            quadNum = 0;
+        }
+
+        return quadNum;
+    }
+
     public int calculateScore(int[] pipCounts, Category category) {
         switch(category){
             case ONES: 
@@ -81,7 +112,7 @@ class ScoreKeeper {
                 this.score = getThreeOfKindScore(pipCounts);
                 break;
             case FOUR_OF_KIND:
-                this.score = 4;
+                this.score = getFourOfKindScore(pipCounts);
                 break;
         }
 
